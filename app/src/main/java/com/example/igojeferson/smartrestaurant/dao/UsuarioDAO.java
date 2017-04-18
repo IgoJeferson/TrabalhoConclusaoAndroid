@@ -42,11 +42,14 @@ public class UsuarioDAO {
 
     public String add(Usuario usuario) {
         long resultado;
+
         SQLiteDatabase db = banco.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUNA_LOGIN, usuario.getLogin());
         values.put(COLUNA_SENHA, usuario.getSenha());
+        //String where = " login = '" + usuario.getLogin() + "'";
         resultado = db.insert(TABELA_USUARIO, null, values);
+        //resultado = db.update(TABELA_USUARIO, values, where, null);
         db.close();
         if (resultado == -1) {
             return "Erro ao inserir registro";
