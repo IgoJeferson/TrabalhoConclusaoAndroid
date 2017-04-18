@@ -1,0 +1,12 @@
+CREATE TABLE usuario (
+    id integer NOT NULL PRIMARY KEY,
+    login varchar(255) NOT NULL,
+    senha varchar(255) NOT NULL
+);
+
+CREATE TABLE pedido (
+    id integer NOT NULL PRIMARY KEY,
+    descricao varchar(255) NOT NULL,
+    quantidade integer NOT NULL,
+    valor_unitario double NOT NULL
+);
